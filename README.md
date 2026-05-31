@@ -2,6 +2,8 @@
 
 I built this project to predict weekly dengue case counts in **San Juan (Puerto Rico)** and **Iquitos (Peru)** from weather, satellite vegetation indices, and epidemic history. It was completed for a **Data Exploration** course using the [DengAI](https://www.drivendata.org/competitions/44/dengai-predicting-disease-spread/) dataset (DrivenData / U.S. CDC).
 
+This repository contains my individual implementation of our university Data Exploration project. The Medium article describes the full team effort (co-authored with Jan Małek).
+
 **Full narrative:** [Predicting the Spread of Dengue Fever (DengAI) — Medium](https://medium.com/@sebastian.jozef.lukasik/predicting-the-spread-of-dengue-fever-dengai-fe5d0f7c8fef)
 
 **Author:** [Sebastian Łukasik](https://github.com/SebaLukasik)
