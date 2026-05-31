@@ -4,7 +4,7 @@ I built this project to predict weekly dengue case counts in **San Juan (Puerto 
 
 **Full narrative:** [Predicting the Spread of Dengue Fever (DengAI) — Medium](https://medium.com/@sebastian.jozef.lukasik/predicting-the-spread-of-dengue-fever-dengai-fe5d0f7c8fef)
 
-**Author:** [Sebastian Józef Łukasik](https://github.com/SebaLukasik)
+**Author:** [Sebastian Łukasik](https://github.com/SebaLukasik)
 
 ---
 
