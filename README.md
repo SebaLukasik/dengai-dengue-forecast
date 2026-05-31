@@ -1,16 +1,16 @@
 # DengAI: weekly dengue case forecasting
 
-Predict weekly dengue case counts in **San Juan (Puerto Rico)** and **Iquitos (Peru)** from weather, satellite vegetation indices, and epidemic history. Built as a **Data Exploration** course project on the [DengAI](https://www.drivendata.org/competitions/44/dengai-predicting-disease-spread/) dataset (DrivenData / U.S. CDC).
+I built this project to predict weekly dengue case counts in **San Juan (Puerto Rico)** and **Iquitos (Peru)** from weather, satellite vegetation indices, and epidemic history. It was completed for a **Data Exploration** course using the [DengAI](https://www.drivendata.org/competitions/44/dengai-predicting-disease-spread/) dataset (DrivenData / U.S. CDC).
 
 **Full narrative:** [Predicting the Spread of Dengue Fever (DengAI) — Medium](https://medium.com/@sebastian.jozef.lukasik/predicting-the-spread-of-dengue-fever-dengai-fe5d0f7c8fef)
 
-**Authors:** Sebastian Józef Łukasik & *[teammate name]*
+**Author:** [Sebastian Józef Łukasik](https://github.com/SebaLukasik)
 
 ---
 
 ## Summary (for a quick read)
 
-We built an end-to-end **time-series ML pipeline**: EDA → lag-based feature engineering → model comparison → hyperparameter tuning (RandomizedSearch, Optuna, GridSearch) → multi-week forecast horizons → **SHAP** explainability. **Gradient boosting (XGBoost)** beat a neural network and a zero-shot foundation model (Chronos-T5) when weather and lags were included. San Juan is harder (higher MAE, stronger outliers); Iquitos is more stable. The strongest predictors in the final models are **recent case momentum** (`cases_moving_avg`) and **lagged** weather, not same-week conditions alone.
+I implemented an end-to-end **time-series ML pipeline**: EDA → lag-based feature engineering → model comparison → hyperparameter tuning (RandomizedSearch, Optuna, GridSearch) → multi-week forecast horizons → **SHAP** explainability. **Gradient boosting (XGBoost)** beat a neural network and a zero-shot foundation model (Chronos-T5) when weather and lags were included. San Juan is harder (higher MAE, stronger outliers); Iquitos is more stable. The strongest predictors in the final models are **recent case momentum** (`cases_moving_avg`) and **lagged** weather, not same-week conditions alone.
 
 ---
 
@@ -62,7 +62,7 @@ Custom features per week, including:
 | **MLP (Keras)** | Neural baseline on scaled tabular features |
 | **Amazon Chronos-T5** | Zero-shot forecast on case history only (no weather) |
 
-**Design choice:** After Optuna, Random Forest is ~0.12 MAE better than XGBoost on Iquitos hold-out. We still use **tuned XGBoost for both cities** in forecast plots, horizon tests, and SHAP so one pipeline is documented end-to-end. See Medium article for rationale.
+**Design choice:** After Optuna, Random Forest is ~0.12 MAE better than XGBoost on Iquitos hold-out. I still use **tuned XGBoost for both cities** in forecast plots, horizon tests, and SHAP so one pipeline is documented end-to-end. See the Medium article for rationale.
 
 ---
 
@@ -174,7 +174,7 @@ Key figures:
 **Requirements:** Python 3.10+
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/dengai-dengue-forecast.git
+git clone https://github.com/SebaLukasik/dengai-dengue-forecast.git
 cd dengai-dengue-forecast
 python -m venv .venv
 .venv\Scripts\activate          # Windows
@@ -197,7 +197,7 @@ jupyter notebook notebooks/dengue_forecasting.ipynb
 - Chronos evaluated only on univariate case history.
 - Production use would need external validation, uncertainty intervals, and public-health review.
 
-**Next steps we considered:** rolling-window CV, per-horizon models, stronger feature selection for San Juan weather redundancy, exported sklearn pipeline (pickle/ONNX).
+**Next steps I would try next:** rolling-window CV, per-horizon models, stronger feature selection for San Juan weather redundancy, exported sklearn pipeline (pickle/ONNX).
 
 ---
 
